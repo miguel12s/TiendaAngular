@@ -1,0 +1,15 @@
+<section class="description-products">
+    <div class="container">
+       <h2>{{product.title}}</h2>
+       <div class="container-img">
+        <img [src]="product.image" alt="">
+        </div>
+        <p>{{product.description}}</p>
+        <p>{{product.price}}</p>
+       <span *ngFor="let stairs of  paintStars(product.rating[0])"  class="material-icons">star </span>
+       
+        <p>{{product.rating[1]}}        </p>
+    </div>
+
+
+</section>
