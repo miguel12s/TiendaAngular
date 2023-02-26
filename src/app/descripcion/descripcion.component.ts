@@ -13,6 +13,7 @@ export class DescripcionComponent implements OnInit {
 
 indice:number=0
 product!:Product
+counter:number=0
 
   ngOnInit():void{
 this.indice=this.RouterActivated.snapshot.params['id']
@@ -26,6 +27,10 @@ this.productService.findProductForId(this.indice).pipe(
   )
 
 ).subscribe()
+
+
+
+
 
   }
   constructor(private RouterActivated:ActivatedRoute,private productService:productService){
@@ -58,5 +63,19 @@ this.productService.findProductForId(this.indice).pipe(
   }
 
 
+ increment(number:number):void{
+this.counter+=number
+ }
+ decrement(number:number):void{
+  if (this.counter==0){
+    return
+  }else if(this.counter>0){
+    this.counter-=number
+  }
+  }
+ 
+ }
 
-}
+
+
+
